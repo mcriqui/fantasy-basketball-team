@@ -10,7 +10,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import join
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,6 +27,8 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+
+TIME_ZONE = 'America/New York'
 
 
 # Application definition
@@ -63,6 +67,11 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+TEMPLATE_DIRS = (
+    join(BASE_DIR, 'templates'),
+    )
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
