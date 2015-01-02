@@ -1,7 +1,7 @@
 from django.db import models
 
 
-# Create your models here.
+
 class Game(models.Model):
     played_on_date = models.DateField()
     played_on_time = models.TimeField(null=True, blank=True)
@@ -20,7 +20,7 @@ class Game(models.Model):
 class Player(models.Model):
     name = models.CharField(max_length=50)
     jersey_number = models.IntegerField(null=True, blank=True)
-    team = models.CharField(max_length=50, null=True, blank=True)
+    team = models.ForeignKey('Team', null=True, blank=True)
     position = models.CharField(max_length=50, null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
 
