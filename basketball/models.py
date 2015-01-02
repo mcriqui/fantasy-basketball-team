@@ -28,5 +28,17 @@ class Player(models.Model):
         verbose_name = "Player"
         verbose_name_plural = "Players"
 
-    # def __str__(self):
-        # 'Player'
+    def __str__(self):
+        return self.name
+
+
+class Team(models.Model):
+    city = models.CharField(max_length=50)
+    mascot = models.CharField(max_length=20)
+
+    class Meta:
+        verbose_name = "Team"
+        verbose_name_plural = "Teams"
+
+    def __str__(self):
+        return '{0} {1}'.format(self.city, self.mascot)
