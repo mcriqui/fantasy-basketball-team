@@ -2,12 +2,24 @@
 </head>
 
 <body>
-    <h3>Maggie!</h3>
+    <h3>Maggie's Fantasy Basketball Team</h3>
 
 {% for game in game_list%}
     <h5>{{game}}</h5>
     <p>{{game.played_on_date}}</p>
     <p>{{game.played_on_time}}</p>
     <p>{{game.tv_channel}}
+    <h5>Home Team</h5>
+    <p>{{game.home.mascot}}</p>
+
+    {% for player in game.home.player_set.all %}
+        <p>{{player.name}}</p>
+    {% endfor %}
+
+    <h5>Away Team</h5>
+
+    {% for player in game.away.player_set.all %}
+        <p>{{player.name}}</p>
+    {% endfor %}
 {% endfor %}
 </body>
