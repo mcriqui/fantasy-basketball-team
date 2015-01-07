@@ -1,0 +1,30 @@
+
+.title{
+  font-size: 72px;
+  text-align: center;
+  /*padding-top: 1em;
+  padding-bottom: 1em;*/
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: 'Arvo';
+}
+
+.background{
+    background-color: #232B2B;
+}
+.site-text{
+    color: #FFFFFF;
+    font-family: 'PT SANS';
+}
+
+.game-name{
+    color: #E3AE57;
+}
+
+.national-tv{
+    color: #DC3D24;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 3em
+}
+

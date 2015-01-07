@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'basketball'
+    'basketball',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,6 +73,9 @@ TEMPLATE_DIRS = (
     join(BASE_DIR, 'templates'),
     )
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
