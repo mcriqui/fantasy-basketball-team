@@ -7,6 +7,7 @@
         <link href="static/style.css" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <title>Who's Playing?</title>
 
@@ -49,6 +50,7 @@
 
                     </div>
 
+
                     <div class="col-lg-8">
 
                         {% for player in game.home.player_set.all %}
@@ -61,9 +63,11 @@
                             </div>
 
                             <div class="col-lg-6">
-                            <img src="{{player.image_url}}" class="img-responsive"/>
+                                <div class="player-image">
+                                    <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         {% endfor %}
 
                         {% for player in game.away.player_set.all %}
@@ -73,9 +77,10 @@
                                 <p>Position: {{player.position}}</p>
                                 <p>Number: {{player.jersey_number}}</p>
                             </div>
-
-                            <div class="col-lg-6">
-                                <img src="{{player.image_url}}" class="img-responsive"/>
+                            <div class="player-image">
+                                <div class="col-lg-6">
+                                    <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                                </div>
                             </div>
                         </div>
                         {% endfor %}

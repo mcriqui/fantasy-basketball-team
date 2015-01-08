@@ -2,8 +2,6 @@
 .title{
   font-size: 72px;
   text-align: center;
-  /*padding-top: 1em;
-  padding-bottom: 1em;*/
   text-transform: uppercase;
   font-weight: 900;
   font-family: 'Arvo';
@@ -11,15 +9,19 @@
 
 .background{
     background-color: #232B2B;
+    padding-bottom: 16em
 }
 .site-text{
     color: #FFFFFF;
-    font-family: 'PT SANS';
+    font-family: 'Roboto';
+    text-align: center;
 }
 
 .game-name{
     color: #E3AE57;
     text-align:center;
+    padding-top: 2em;
+    padding-bottom: 2em
 }
 
 .national-tv{
@@ -27,5 +29,8 @@
     text-transform: uppercase;
     font-weight: 900;
     font-size: 1em;
+}
+.player-image{
+    padding-top: 1em;
 }
 

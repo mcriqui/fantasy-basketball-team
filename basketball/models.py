@@ -23,6 +23,7 @@ class Player(models.Model):
     team = models.ForeignKey('Team', null=True, blank=True)
     position = models.CharField(max_length=50, null=True, blank=True)
     image_url = models.URLField(null=True, blank=True)
+    image_credit = models.CharField(max_length=100, null=True, blank=True)
 
     class Meta:
         verbose_name = "Player"
