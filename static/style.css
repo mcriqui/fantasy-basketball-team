@@ -19,12 +19,13 @@
 
 .game-name{
     color: #E3AE57;
+    text-align:center;
 }
 
 .national-tv{
-    color: #DC3D24;
+    background-color: #DC3D24;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 3em
+    font-size: 1em;
 }
 

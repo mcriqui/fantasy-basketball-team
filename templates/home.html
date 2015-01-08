@@ -1,69 +1,89 @@
-<!DOCTYPE html>
+<!DOCTYPE html>{% load staticfiles %}
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href="static/style.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link href="static/style.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+        <title>Who's Playing?</title>
 
-    <title>Who's Playing?</title>
 
-</head>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
 
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    </head>
+    <body>
+        <div class="background">
 
-<body>
-    <div class="background">
-        <div class = "container">
-            <div class = "jumbotron">
-                <h1 class ="title">Who's Playing Today?</h1>
+            <div class = "container">
+                <div class = "jumbotron">
+                    <h1 class ="title">Who's Playing Today?</h1>
+                </div>
+            </div>
+
+        <div class="container">
+            <div class="site-text">
+
+                {% for game in game_list %}
+                <div class="row">
+                <div class="game-name">
+                            <h3>{{game}}</h3>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+
+                        <p>{{game.played_on_date}}</p>
+                        {% if game.played_on_time %}
+                        <div class="national-tv">
+                            <p>Watch this game: {{game.played_on_time}} on {{game.tv_channel}}</p>
+                        </div>
+                        {% else %}
+                            <p>Game is not on National TV</p>
+                        {% endif %}
+
+                        <p>Home Team: {{game.home.city}} {{game.home.mascot}} </p>
+                        <p>Away Team: {{game.away.city}} {{game.away.mascot}}</p>
+
+                    </div>
+
+                    <div class="col-lg-8">
+
+                        {% for player in game.home.player_set.all %}
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <p>Player: {{player.name}}</p>
+                                <p>Position: {{player.position}}</p>
+                                <p>Number: {{player.jersey_number}}</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                            <img src="{{player.image_url}}" class="img-responsive"/>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% for player in game.away.player_set.all %}
+                        <div class="row">
+                            <div class="col-lg-6"?
+                                <p>Player: {{player.name}}</p>
+                                <p>Position: {{player.position}}</p>
+                                <p>Number: {{player.jersey_number}}</p>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img src="{{player.image_url}}" class="img-responsive"/>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
-
-<div class="container">
-    <div class="site-text">
-        {% for game in game_list%}
-            <div class="game-name">
-                <h3>{{game}}</h3>
-            </div>
-                <p>{{game.played_on_date}}</p>
-            {% if game.played_on_time %}
-            <div class="national-tv">
-                <p>Watch this game: {{game.played_on_time}} on {{game.tv_channel}}</p>
-            </div>
-            {% else %}
-                <p>Game is not on National TV</p>
-            {% endif %}
-
-
-
-    <p>Home Team: {{game.home.city}} {{game.home.mascot}} </p>
-    <p>Away Team: {{game.away.city}} {{game.away.mascot}}</p>
-
-    {% for player in game.home.player_set.all %}
-
-    <p>Player: {{player.name}}</p>
-    <p>Position: {{player.position}}</p>
-    <p>Number: {{player.jersey_number}}</p>
-    <img src="{{player.image_url}}" class="img-responsive"/>
-
-    {% endfor %}
-
-    {% for player in game.away.player_set.all %}
-
-    <p>Player: {{player.name}}</p>
-    <p>Position: {{player.position}}</p>
-    <p>Number: {{player.jersey_number}}</p>
-    <img src="{{player.image_url}}" class="img-responsive"/>
-
-    {% endfor %}
-
-{% endfor %}
-</div>
-</div>
-</div>
-</body>
+        </div>
+    </body>
+</html>
