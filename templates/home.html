@@ -55,7 +55,6 @@
 
                         {% for player in game.home.player_set.all %}
                         <div class="row">
-
                             <div class="col-lg-6">
                                 <p>Player: {{player.name}}</p>
                                 <p>Position: {{player.position}}</p>
@@ -72,7 +71,7 @@
 
                         {% for player in game.away.player_set.all %}
                         <div class="row">
-                            <div class="col-lg-6"?
+                            <div class="col-lg-6">
                                 <p>Player: {{player.name}}</p>
                                 <p>Position: {{player.position}}</p>
                                 <p>Number: {{player.jersey_number}}</p>
