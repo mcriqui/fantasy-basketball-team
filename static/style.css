@@ -24,13 +24,39 @@
     padding-bottom: 2em
 }
 
+.game-date{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-information{
+    background-color: #eee;
+    color:black;
+    padding-bottom: 1em
+}
+
+.game-text{
+    font-size:16px;
+}
+
+
 .national-tv{
     background-color: #DC3D24;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 1em;
+    color: #FFFFFF;
 }
 .player-image{
     padding-top: 1em;
+    /*padding-bottom: 2em;*/
+}
+.individual-game{
+    padding-top: 3em;
+    /*border-style: solid;*/
+
 }
 
+.player-information{
+    padding-top:3em;
+}

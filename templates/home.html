@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
 
     </head>
+
     <body>
         <div class="background">
 
@@ -29,65 +30,80 @@
 
                 {% for game in game_list %}
                 <div class="row">
-                <div class="game-name">
-                            <h3>{{game}}</h3>
-                        </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-
-                        <p>{{game.played_on_date}}</p>
-                        {% if game.played_on_time %}
-                        <div class="national-tv">
-                            <p>Watch this game: {{game.played_on_time}} on {{game.tv_channel}}</p>
-                        </div>
-                        {% else %}
-                            <p>Game is not on National TV</p>
-                        {% endif %}
-
-                        <p>Home Team: {{game.home.city}} {{game.home.mascot}} </p>
-                        <p>Away Team: {{game.away.city}} {{game.away.mascot}}</p>
-
+                    <div class="game-name">
+                        <h3>{{game}}</h3>
                     </div>
+                </div>
 
+                <div class="row">
+                    <div class="game-date">
+                        <p>{{game.played_on_date}}</p>
+                    </div>
+                </div>
 
-                    <div class="col-lg-8">
+                <div class="game-information">
+                    <div class="row">
+                        <div class="game-text">
+                            <div class="col-lg-4">
+                                <div class="individual-game">
+                                    {% if game.played_on_time %}
 
-                        {% for player in game.home.player_set.all %}
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p>Player: {{player.name}}</p>
-                                <p>Position: {{player.position}}</p>
-                                <p>Number: {{player.jersey_number}}</p>
+                                    <div class="national-tv">
+                                        <p>Watch this game: {{game.played_on_time}} on {{game.tv_channel}}</p>
+                                    </div>
+                                    {% else %}
+                                        <p>Game is not on National TV</p>
+                                    {% endif %}
+
+                                    <p>Home Team: {{game.home.city}} {{game.home.mascot}} </p>
+                                    <p>Away Team: {{game.away.city}} {{game.away.mascot}}</p>
+                                </div>
                             </div>
 
-                            <div class="col-lg-6">
-                                <div class="player-image">
-                                    <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                            <div class="col-lg-8">
+
+                                {% for player in game.home.player_set.all %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="player-information">
+                                            <p>Player: {{player.name}}</p>
+                                            <p>Position: {{player.position}}</p>
+                                            <p>Number: {{player.jersey_number}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="player-image">
+                                            <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
+                                {% endfor %}
 
-                        {% for player in game.away.player_set.all %}
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <p>Player: {{player.name}}</p>
-                                <p>Position: {{player.position}}</p>
-                                <p>Number: {{player.jersey_number}}</p>
-                            </div>
-                            <div class="player-image">
-                                <div class="col-lg-6">
-                                    <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                                {% for player in game.away.player_set.all %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="player-information">
+                                            <p>Player: {{player.name}}</p>
+                                            <p>Position: {{player.position}}</p>
+                                            <p>Number: {{player.jersey_number}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="player-image">
+                                        <div class="col-lg-6">
+                                            <img src="{{player.image_url}}" class="img-responsive img-thumbnail"/>
+                                        </div>
+                                    </div>
                                 </div>
+                                {% endfor %}
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
                 {% endfor %}
+                </div>
             </div>
-        </div>
         </div>
     </body>
 </html>
