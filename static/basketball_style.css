@@ -1,0 +1,62 @@
+
+.title{
+  font-size: 72px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: 'Arvo';
+}
+
+.background{
+    background-color: #232B2B;
+    padding-bottom: 16em
+}
+.site-text{
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    text-align: center;
+}
+
+.game-name{
+    color: #E3AE57;
+    text-align:center;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+.game-date{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.game-information{
+    background-color: #eee;
+    color:black;
+    padding-bottom: 1em
+}
+
+.game-text{
+    font-size:16px;
+}
+
+
+.national-tv{
+    background-color: #DC3D24;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1em;
+    color: #FFFFFF;
+}
+.player-image{
+    padding-top: 1em;
+    /*padding-bottom: 2em;*/
+}
+.individual-game{
+    padding-top: 3em;
+    /*border-style: solid;*/
+
+}
+
+.player-information{
+    padding-top:3em;
+}

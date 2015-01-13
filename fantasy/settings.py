@@ -74,7 +74,7 @@ TEMPLATE_DIRS = (
     )
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, 'static'),
 )
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
